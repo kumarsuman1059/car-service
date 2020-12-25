@@ -27,5 +27,5 @@ t_carservice
 t_user
 t_car
 
-One TO One mapping t_user and t_car
-One TO One mapping t_user and t_carservice
+One TO Many mapping relationship between tables t_user and t_car
+One TO Many mapping relationship between tables t_user and t_carservice
