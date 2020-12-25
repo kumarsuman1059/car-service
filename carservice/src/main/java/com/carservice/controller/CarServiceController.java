@@ -28,12 +28,12 @@ public class CarServiceController {
 	}
 	
 	@GetMapping(value = "/getAvailableCarService/{user}")
-	public ResponseEntity<List<Carservice>> getAvailableCarServiceByUser(@PathParam(value = "user") String user) {
+	public ResponseEntity<List<Carservice>> getAvailableCarServiceByUser(@PathParam(value = "user") final String user) {
 		return new ResponseEntity<List<Carservice>>(carServiceRecordService.findAllCarServiceByUser(user), HttpStatus.OK);
 	} 
 	
 	@GetMapping(value = "/getAvailableCarService/{car}")
-	public ResponseEntity<List<Carservice>> getAvailableCarServiceByCar(@PathParam(value = "car") String car) {
+	public ResponseEntity<List<Carservice>> getAvailableCarServiceByCar(@PathParam(value = "car") final String car) {
 		return new ResponseEntity<List<Carservice>>(carServiceRecordService.findAllCarServiceByCar(car), HttpStatus.OK);
 	} 
 	

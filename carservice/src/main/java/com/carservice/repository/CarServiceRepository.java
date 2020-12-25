@@ -13,7 +13,7 @@ import com.carservice.model.Carservice;
 @Repository
 public interface CarServiceRepository extends JpaRepository<Carservice, Long>{
 
-	@Query("select t from t_carservice t where t.car_name=:car")
+	@Query("select t from t_carservice t where t.car_model=:car")
 	public List<Carservice> findAllCarServiceByCar(@Param("car") String car);
 
 }

@@ -2,9 +2,12 @@ package com.carservice.model;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -17,29 +20,14 @@ public class Carservice {
 	private Long serviceId;
 	
 	@Column(name = "car_model")
-	private String carModel;
-
-	@Column(name = "car_number")
-	private String carNumber;
+	private String carName;
 	
 	@Column(name = "available_service")
 	private String availableService;
-
-	public String getCarModel() {
-		return carModel;
-	}
-
-	public void setCarModel(String carModel) {
-		this.carModel = carModel;
-	}
-
-	public String getCarNumber() {
-		return carNumber;
-	}
-
-	public void setCarNumber(String carNumber) {
-		this.carNumber = carNumber;
-	}
+	
+	@ManyToOne(fetch = FetchType.LAZY, optional = false)
+	@JoinColumn(name = "user_id", nullable = false)
+	private User userService;
 
 	public String getAvailableService() {
 		return availableService;
@@ -48,8 +36,22 @@ public class Carservice {
 	public void setAvailableService(String availableService) {
 		this.availableService = availableService;
 	}
-	
-	
-	
+
+	public User getUserService() {
+		return userService;
+	}
+
+	public void setUserService(User userService) {
+		this.userService = userService;
+	}
+
+	public String getCarName() {
+		return carName;
+	}
+
+	public void setCarName(String carName) {
+		this.carName = carName;
+	}
+		
 
 }

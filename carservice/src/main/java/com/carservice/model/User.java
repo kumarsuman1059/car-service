@@ -26,6 +26,9 @@ public class User {
 
 	@OneToMany(mappedBy = "applicationuser", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private List<Car> car;
+	
+	@OneToMany(mappedBy = "userService", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+	private List<Carservice> carservice;
 
 	public String getName() {
 		return name;
@@ -42,5 +45,14 @@ public class User {
 	public void setCar(List<Car> car) {
 		this.car = car;
 	}
+
+	public List<Carservice> getCarservice() {
+		return carservice;
+	}
+
+	public void setCarservice(List<Carservice> carservice) {
+		this.carservice = carservice;
+	}
+	
 
 }
