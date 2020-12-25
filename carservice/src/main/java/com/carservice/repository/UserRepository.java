@@ -14,5 +14,5 @@ import com.carservice.model.User;
 public interface UserRepository extends JpaRepository<User, Long> {
 
 	@Query("select t from t_user t where t.user_name=:user")
-	public List<Carservice> findAllCarServiceByUser(@Param("user") String user);
+	List<Carservice> findAllCarServiceByUser(@Param("user") String user);
 }

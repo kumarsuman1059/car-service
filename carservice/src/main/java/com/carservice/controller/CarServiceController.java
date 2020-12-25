@@ -37,7 +37,7 @@ public class CarServiceController {
 		return new ResponseEntity<List<Carservice>>(carServiceRecordService.findAllCarServiceByCar(car), HttpStatus.OK);
 	} 
 	
-	@PostMapping(value = "/getAllUsers",consumes = "application/json", produces = "application/json")
+	@PostMapping(value = "/recordUserCarService",consumes = "application/json", produces = "application/json")
 	public void recordCarService(@RequestBody User user) {
 		carServiceRecordService.recordCarService(user);
 	} 

@@ -29,6 +29,14 @@ public class User {
 	
 	@OneToMany(mappedBy = "userService", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 	private List<Carservice> carservice;
+	
+	public Long getUserId() {
+		return userId;
+	}
+
+	public void setUserId(Long userId) {
+		this.userId = userId;
+	}
 
 	public String getName() {
 		return name;

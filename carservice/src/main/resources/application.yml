@@ -2,8 +2,8 @@ spring:
   datasource:
     driver-class-name: org.postgresql.Driver
     username: postgres
-    password: 
-    url: jdbc:postgresql://localhost:5434/carservice
+    password: postgres
+    url: jdbc:postgresql://localhost:5432/carservice
   jpa:
     show-sql: true
     generate-ddl: true
