@@ -32,6 +32,11 @@ public class CarServiceRecordServiceImpl implements CarServiceRecordService {
 		return carServiceRepository.findAllCarServiceByCar(car);
 	}
 
+	@Override
+	public void recordCarService(User user) {
+		userRepository.save(user);		
+	}
+
 
 
 }

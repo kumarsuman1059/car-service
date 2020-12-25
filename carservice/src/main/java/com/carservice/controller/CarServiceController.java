@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.carservice.model.Carservice;
@@ -25,14 +27,20 @@ public class CarServiceController {
 		return new ResponseEntity<List<User>>(carServiceRecordService.getAllUserList(), HttpStatus.OK);
 	}
 	
-	@GetMapping("value = /getAvailableCarService/{user}")
+	@GetMapping(value = "/getAvailableCarService/{user}")
 	public ResponseEntity<List<Carservice>> getAvailableCarServiceByUser(@PathParam(value = "user") String user) {
 		return new ResponseEntity<List<Carservice>>(carServiceRecordService.findAllCarServiceByUser(user), HttpStatus.OK);
 	} 
 	
-	@GetMapping("value = /getAvailableCarService/{car}")
+	@GetMapping(value = "/getAvailableCarService/{car}")
 	public ResponseEntity<List<Carservice>> getAvailableCarServiceByCar(@PathParam(value = "car") String car) {
 		return new ResponseEntity<List<Carservice>>(carServiceRecordService.findAllCarServiceByCar(car), HttpStatus.OK);
 	} 
-
+	
+	@PostMapping(value = "/getAllUsers",consumes = "application/json", produces = "application/json")
+	public void recordCarService(@RequestBody User user) {
+		carServiceRecordService.recordCarService(user);
+	} 
+	
+	
 }

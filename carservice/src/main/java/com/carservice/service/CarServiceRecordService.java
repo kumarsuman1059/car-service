@@ -15,5 +15,7 @@ public interface CarServiceRecordService {
 	List<Carservice> findAllCarServiceByUser(String user);
 	
 	List<Carservice> findAllCarServiceByCar(String car);
+	
+	void recordCarService(User user);
 
 }
